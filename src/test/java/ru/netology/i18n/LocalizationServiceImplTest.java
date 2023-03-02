@@ -2,19 +2,16 @@ package ru.netology.i18n;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
-enum Direction {
-    RUSSIA, GERMANY, USA, BRAZIL;
+class LocalizationServiceTest {
 
 
-    @EnumSource(Direction.class);
     @ParameterizedTest
-
-    void locale(Direction country) {
-        Assertions.assertNull(country);
-
-
+    @ValueSource(strings = "RUSSIA")
+    void locale(String country) {
+        String salute = "Добро пожаловать";
+        Assertions.assertEquals(country, salute);
     }
 
 
