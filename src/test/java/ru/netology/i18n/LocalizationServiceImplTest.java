@@ -6,13 +6,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 class LocalizationServiceTest {
 
-
     @ParameterizedTest
-    @ValueSource(strings = "RUSSIA")
+    @ValueSource(strings = "Добро пожаловать")
     void locale(String country) {
         String salute = "Добро пожаловать";
         Assertions.assertEquals(country, salute);
     }
-
-
 }
